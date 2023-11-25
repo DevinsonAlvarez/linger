@@ -2,6 +2,13 @@
 @section('title', 'categories')
 @section('content')
 
+    <div x-data="{ open: false }">
+        <button @click="open = !open">Expand</button>
+        <span x-cloak x-show="open">
+            hiden
+        </span>
+    </div>
+
     <div class="flex min-h-screen bg-gray-200 text-gray-800">
         <div class="p-4 w-full">
             <div class="bg-white items-center px-6 py-3 justify-between rounded-lg flex mb-4 relative">

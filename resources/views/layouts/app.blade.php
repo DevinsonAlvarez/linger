@@ -8,7 +8,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body class="antialiased">
@@ -73,7 +73,8 @@
                 </li>
                 <li class="h-10 ">
                     <a href="sales_detail"
-                        class="flex hover:bg-slate-200 rounded-lg h-full w-full items-center px-3">Detalles de ventas</a>
+                        class="flex hover:bg-slate-200 rounded-lg h-full w-full items-center px-3">Detalles de
+                        ventas</a>
                 </li>
             </ul>
         </nav>
@@ -82,6 +83,7 @@
         </section>
 
     </main>
+
 </body>
 
 </html>
