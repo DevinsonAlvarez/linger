@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\SalesController;
+use App\Http\Controllers\SalesDetailController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +19,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get("/", HomeController::class)->name('home');
+
+Route::get("/categories", [CategoriesController::class, 'index'])->name('categories');
+Route::delete("/categories/{id}", [CategoriesController::class, 'delete'])->name('categories.delete');
+
+Route::get('/products', [ProductsController::class, 'index'])->name('products');
+
+Route::get('/users', [UsersController::class, 'index'])->name('users');
+
+Route::get('/sales', [SalesController::class, 'index'])->name('sales');
+
+Route::get('/sales-detail', [SalesDetailController::class, 'index'])->name('sales-detail');
