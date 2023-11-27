@@ -23,9 +23,14 @@ use Illuminate\Support\Facades\Route;
 Route::get("/", HomeController::class)->name('home');
 
 Route::get("/categories", [CategoriesController::class, 'index'])->name('categories');
+Route::patch("/categories/{id}", [CategoriesController::class, 'update'])->name('categories.update');
+Route::post("/categories/create", [CategoriesController::class, 'create'])->name('categories.create');
 Route::delete("/categories/{id}", [CategoriesController::class, 'delete'])->name('categories.delete');
 
+
+
 Route::get('/products', [ProductsController::class, 'index'])->name('products');
+
 
 Route::get('/users', [UsersController::class, 'index'])->name('users');
 
