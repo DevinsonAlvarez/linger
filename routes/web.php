@@ -27,6 +27,7 @@ Route::patch("/categories/{id}", [CategoriesController::class, 'update'])->name(
 Route::post("/categories/create", [CategoriesController::class, 'create'])->name('categories.create');
 Route::delete("/categories/{id}", [CategoriesController::class, 'delete'])->name('categories.delete');
 
+Route::view('/asd', 'components.button', ['slot' => 'asd', 'color' => 'success']);
 
 
 Route::get('/products', [ProductsController::class, 'index'])->name('products');

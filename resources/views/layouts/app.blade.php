@@ -1,10 +1,12 @@
+@props(['title'])
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title')</title>
+    <title>{{ $title ?? config('app.name', 'Laravel') }}</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
@@ -55,31 +57,31 @@
         <nav class="col-span-2 border-r-2 px-4 py-4 border-slate-300">
             <h1 class="text-2xl font-semibold border-b-2 pb-2">Tablas</h1>
             <ul class="pt-2">
-                <li class="h-10 ">
+                <li class="h-10 {{ Route::is('products') ? 'border-l-2 border-l-blue-300' : '' }} ">
                     <a href="products"
-                        class="flex hover:bg-slate-200 rounded-lg h-full w-full items-center px-3">Productos</a>
+                        class="flex hover:bg-slate-100 rounded-md h-full w-full items-center px-3">Productos</a>
                 </li>
-                <li class="h-10  ">
+                <li class="h-10 {{ Route::is('categories') ? 'border-l-2 border-l-blue-300' : '' }}">
                     <a href="categories"
-                        class="flex hover:bg-slate-200 rounded-lg h-full w-full items-center px-3">Categorias</a>
+                        class="flex hover:bg-slate-100 rounded-md h-full w-full items-center px-3">Categorias</a>
                 </li>
-                <li class="h-10  ">
+                <li class="h-10 {{ Route::is('users') ? 'border-l-2 border-l-blue-300' : '' }}  ">
                     <a href="users"
-                        class="flex hover:bg-slate-200 rounded-lg h-full w-full items-center px-3">Usuarios</a>
+                        class="flex hover:bg-slate-100 rounded-md h-full w-full items-center px-3">Usuarios</a>
                 </li>
-                <li class="h-10  ">
+                <li class="h-10 {{ Route::is('sales') ? 'border-l-2 border-l-blue-300' : '' }}  ">
                     <a href="sales"
-                        class="flex hover:bg-slate-200 rounded-lg h-full w-full items-center px-3">Ventas</a>
+                        class="flex hover:bg-slate-100 rounded-md h-full w-full items-center px-3">Ventas</a>
                 </li>
-                <li class="h-10 ">
-                    <a href="sales_detail"
-                        class="flex hover:bg-slate-200 rounded-lg h-full w-full items-center px-3">Detalles de
+                <li class="h-10 {{ Route::is('sales_detail') ? 'border-l-2 border-l-blue-300' : '' }} ">
+                    <a href="sales-detail"
+                        class="flex hover:bg-slate-100 rounded-md h-full w-full items-center px-3">Detalles de
                         ventas</a>
                 </li>
             </ul>
         </nav>
-        <section class="col-span-10">
-            @yield('content')
+        <section class="col-span-10 min-h-screen relative bg-gray-200 text-gray-800 p-4 w-full">
+            {{ $slot }}
         </section>
 
     </main>

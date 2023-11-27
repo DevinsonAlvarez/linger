@@ -1,6 +1,3 @@
-@extends('layouts.app')
-
-@section('title', 'home')
-@section('content')
+<x-app-layout>
     <h1>Home</h1>
-@endsection
+</x-app-layout>
