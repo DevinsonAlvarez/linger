@@ -37,7 +37,26 @@ export default {
     },
   },
   safelist: [
-    "primary", "secondary", "danger", "warning", "success"
+    {
+      pattern: /^\w+-danger(-\w+)*$/,
+      variants: ["disabled"]
+    },
+    {
+      pattern: /^\w+-primary(-\w+)*$/,
+      variants: ["disabled"]
+    },
+    {
+      pattern: /^\w+-secondary(-\w+)*$/,
+      variants: ["disabled"]
+    },
+    {
+      pattern: /^\w+-success(-\w+)*$/,
+      variants: ["disabled"]
+    },
+    {
+      pattern: /^\w+-warning(-\w+)*$/,
+      variants: ["disabled"]
+    },
   ],
   plugins: [],
 }

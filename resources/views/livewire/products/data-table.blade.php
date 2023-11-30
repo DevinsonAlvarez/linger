@@ -14,13 +14,7 @@
         </button>
     </div>
 
-    <x-modal>
-        <x-slot:content>
-            <livewire:products.edit-form />
-        </x-slot:content>
-    </x-modal>
-
-
+    <livewire:products.edit-form />
 
     <table class="w-full text-sm text-left text-gray-500">
         <thead class="text-xs text-gray-700 bg-gray-200  ">
@@ -77,7 +71,7 @@
                             {{ $product->stock }}
                         </td>
                         <td class="px-6 py-2 text-gray-700">
-                            {{ $product->category->name }}
+                            {{ $product->category?->name }}
                         </td>
                         <td class="px-6 py-2 text-gray-700 ">
                             <div class="flex  items-center gap-1">
@@ -85,11 +79,11 @@
                                     wire:click="delete({{ $product->id }})">
                                     <x-heroicon-s-trash class="h-4 w-4 text-white" />
                                 </x-button>
-                                <div x-data="">
-                                    <x-button @click.prevent="$dispatch('name-changed', { name: 'John Doe' })"  color="primary" wire:loading.attr="disabled" title="Actualizar">
-                                        <x-heroicon-s-pencil-square class="h-4 w-4 text-white" />
-                                    </x-button>
-                                </div>
+                                <x-button color="primary"
+                                    wire:click="$dispatchTo('products.edit-form','openModal', { id: {{ $product->id }} })"
+                                    wire:loading.attr="disabled" wire:target="delete" title="Actualizar">
+                                    <x-heroicon-s-pencil-square class="h-4 w-4 text-white" />
+                                </x-button>
                                 <x-button color="success" wire:loading.attr="disabled" title="Ver detalle">
                                     <x-heroicon-s-eye class="h-4 w-4 text-white" />
                                 </x-button>
