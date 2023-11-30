@@ -10,7 +10,7 @@ class EditForm extends Component
 {
     public $open = false;
     public $product;
-
+ 
     protected $rules = [
         'product.name' => 'required',
         'product.description' => 'required',
