@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $title ?? config('app.name', 'Laravel') }}</title>
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+    {{-- <link rel="preconnect" href="https://fonts.bunny.net"> --}}
+    {{-- <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" /> --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -83,9 +83,7 @@
         <section class="col-span-10 min-h-screen relative bg-gray-200 text-gray-800 p-4 w-full">
             {{ $slot }}
         </section>
-
     </main>
-
 </body>
 
 </html>

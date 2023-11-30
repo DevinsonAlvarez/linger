@@ -1,4 +1,8 @@
-@props(['class' => ''])
+@props(['color' => 'secondary'])
 
-<button {{ $attributes->merge(['class' => "$class text-white px-2 py-2 rounded-lg flex items-center"]) }}>
+@php
+    $color = "bg-$color hover:bg-$color-dark disabled:bg-$color-light";
+@endphp
+
+<button {{ $attributes->merge(['class' => $color . ' text-white p-2 rounded-md flex items-center']) }}>
     {{ $slot }} </button>

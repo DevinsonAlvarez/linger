@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\SalesController;
 use App\Http\Controllers\SalesDetailController;
 use App\Http\Controllers\UsersController;
+use App\Livewire\Products\CreateForm;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,15 +20,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 Route::get("/", HomeController::class)->name('home');
 
 Route::get("/categories", [CategoriesController::class, 'index'])->name('categories');
 Route::patch("/categories/{id}", [CategoriesController::class, 'update'])->name('categories.update');
 Route::post("/categories/create", [CategoriesController::class, 'create'])->name('categories.create');
 Route::delete("/categories/{id}", [CategoriesController::class, 'delete'])->name('categories.delete');
-
-Route::view('/asd', 'components.button', ['slot' => 'asd', 'color' => 'success']);
 
 
 Route::get('/products', [ProductsController::class, 'index'])->name('products');
@@ -38,3 +36,5 @@ Route::get('/users', [UsersController::class, 'index'])->name('users');
 Route::get('/sales', [SalesController::class, 'index'])->name('sales');
 
 Route::get('/sales-detail', [SalesDetailController::class, 'index'])->name('sales-detail');
+
+Route::get("/asd",fn()=>"hola");
