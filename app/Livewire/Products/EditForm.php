@@ -21,7 +21,7 @@ class EditForm extends Component
 
     protected $listeners = ['openModal' => 'openModal'];
 
-    public function update()
+    public function update() 
     {
         $this->validate($this->rules);
 
